@@ -66,7 +66,7 @@ public class TelaServidor extends javax.swing.JFrame {
         setBackground(new java.awt.Color(158, 194, 157));
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel1.setText("Porta:");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(100, 175, 60, 20);
@@ -84,13 +84,14 @@ public class TelaServidor extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         jButton1.setText("Iniciar");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setPreferredSize(new java.awt.Dimension(100, 29));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(80, 280, 90, 30);
+        jButton1.setBounds(80, 280, 110, 30);
 
         jButton2.setBackground(new java.awt.Color(249, 119, 119));
         jButton2.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
@@ -104,11 +105,13 @@ public class TelaServidor extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(250, 280, 100, 30);
+        jButton2.setBounds(240, 280, 110, 30);
         getContentPane().add(label_logo);
         label_logo.setBounds(160, 20, 120, 120);
 
         jProgressBarService.setForeground(new java.awt.Color(60, 122, 73));
+        jProgressBarService.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jProgressBarService.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         getContentPane().add(jProgressBarService);
         jProgressBarService.setBounds(90, 230, 250, 25);
 

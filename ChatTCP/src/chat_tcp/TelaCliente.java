@@ -4,6 +4,8 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+
+import javax.swing.text.Document;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -35,8 +37,6 @@ public class TelaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        login = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -44,17 +44,14 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         porta = new javax.swing.JTextField();
         ip = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        login = new javax.swing.JTextField();
         icone = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel3.setText("Nome de Usuário:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(90, 270, 120, 19);
-        getContentPane().add(login);
-        login.setBounds(220, 270, 110, 25);
-
+        jButton1.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,38 +59,51 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 310, 72, 25);
+        jButton1.setBounds(90, 320, 100, 30);
 
+        jButton2.setBackground(new java.awt.Color(249, 119, 119));
+        jButton2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.setMaximumSize(new java.awt.Dimension(61, 23));
+        jButton2.setMinimumSize(new java.awt.Dimension(61, 23));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(230, 310, 83, 25);
+        jButton2.setBounds(240, 310, 100, 29);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Servidor"));
         jPanel1.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setText("Porta:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(30, 30, 44, 19);
+        jLabel1.setBounds(90, 70, 44, 20);
 
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel2.setText("Endereço IP:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(30, 70, 79, 19);
+        jLabel2.setBounds(50, 40, 90, 20);
         jPanel1.add(porta);
-        porta.setBounds(110, 30, 100, 25);
+        porta.setBounds(150, 70, 120, 25);
         jPanel1.add(ip);
-        ip.setBounds(120, 70, 90, 25);
+        ip.setBounds(150, 40, 120, 25);
+
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel3.setText("Nome do Usuário:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 100, 130, 20);
+        jPanel1.add(login);
+        login.setBounds(150, 100, 120, 25);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(90, 140, 240, 110);
+        jPanel1.setBounds(50, 130, 300, 140);
 
         icone.setText(".");
         getContentPane().add(icone);
-        icone.setBounds(170, 30, 100, 100);
+        icone.setBounds(160, 20, 100, 100);
 
         setBounds(0, 0, 400, 396);
     }// </editor-fold>//GEN-END:initComponents
