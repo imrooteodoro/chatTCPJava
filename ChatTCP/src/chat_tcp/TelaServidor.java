@@ -69,7 +69,7 @@ public class TelaServidor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel1.setText("Porta:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 175, 60, 20);
+        jLabel1.setBounds(80, 170, 80, 20);
 
         porta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         porta.addActionListener(new java.awt.event.ActionListener() {
@@ -117,19 +117,7 @@ public class TelaServidor extends javax.swing.JFrame {
 
         setBounds(0, 0, 442, 370);
     }// </editor-fold>//GEN-END:initComponents
-    
-    /*public void CreateJBarProgressService(int value){
-        JProgressBar bar = new JProgressBar();
-        bar.setBounds(100,210,240,25);
-        bar.setStringPainted(true);
-        bar.setValue(value);
-        bar.setForeground(Color.red);
-        add(bar);
-        
-        jButton1.setAlignmentY(300);
-        jButton1.setAlignmentY(300);
-    }
-    */
+   
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         System.exit(0);
@@ -137,6 +125,12 @@ public class TelaServidor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                
+        if(porta.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Campo vazio. \nFavor, inserir PORTA", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         servidor = new Servidor(Integer.parseInt(porta.getText()));
     
         servidor.iniciar();

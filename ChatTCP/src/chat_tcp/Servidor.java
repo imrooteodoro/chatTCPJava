@@ -45,13 +45,14 @@ class Servidor extends Thread{
           
         } catch(IOException e) {
             JOptionPane.showMessageDialog(null,e );   
-        }        
+        }
     }
    
     void iniciar(){
         try {
             server = new ServerSocket(porta);
-        } catch(IOException e) {
+        } 
+        catch(IOException e) {
             JOptionPane.showMessageDialog(null,e );        
         }
     }

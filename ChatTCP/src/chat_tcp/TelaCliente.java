@@ -1,11 +1,12 @@
 package chat_tcp;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
-
-import javax.swing.text.Document;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -22,21 +23,25 @@ public class TelaCliente extends javax.swing.JFrame {
      * Creates new form TelaCliente
      */
     public TelaCliente() {
-        initComponents();
-        icone.setIcon(new ImageIcon("cliente.png"));
-        icone.setText("");   
-        //telaChat.setVisible(false); 
         
-        /*
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(TelaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(TelaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(TelaServidor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         initComponents();
-        //icone.setIcon(new ImageIcon("/assets/cliente/usuarioLogin.png"));
-        //icone.setText("");   
-        //telaChat.setVisible(false);
         
         ImageIcon icone = new ImageIcon("assets/cliente/usuarioLogin.png");
-        icone.setImage(icone.getImage().getScaledInstance(jLabel_iconLogin.getWidth(), jLabel_iconLogin.getHeight(),1)); //.setImage(icone.getImage().getScaledInstance(label_logo.getWidth(), label_logo.getHeight(),1));
-        jLabel_iconLogin.setIcon(icone);
-        */
+        icone.setImage(icone.getImage().getScaledInstance(JLabel_iconUserLogin.getWidth(), JLabel_iconUserLogin.getHeight(),1));
+        JLabel_iconUserLogin.setIcon(icone);
     }
 
     /**
@@ -57,11 +62,12 @@ public class TelaCliente extends javax.swing.JFrame {
         ip = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         login = new javax.swing.JTextField();
-        icone = new javax.swing.JLabel();
+        JLabel_iconUserLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(43, 134, 167));
         jButton1.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +76,7 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(90, 320, 100, 30);
+        jButton1.setBounds(60, 310, 120, 30);
 
         jButton2.setBackground(new java.awt.Color(249, 119, 119));
         jButton2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
@@ -83,40 +89,44 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(240, 310, 100, 29);
+        jButton2.setBounds(230, 310, 120, 30);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Servidor"));
+        jPanel1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setFont(new java.awt.Font("Serif", 1, 16)); // NOI18N
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setText("Porta:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(90, 70, 44, 20);
+        jLabel1.setBounds(100, 70, 70, 18);
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel2.setText("Endereço IP:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 40, 90, 20);
+        jLabel2.setBounds(50, 40, 120, 18);
         jPanel1.add(porta);
-        porta.setBounds(150, 70, 120, 25);
+        porta.setBounds(170, 70, 140, 23);
         jPanel1.add(ip);
-        ip.setBounds(150, 40, 120, 25);
+        ip.setBounds(170, 40, 140, 23);
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel3.setText("Nome do Usuário:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 100, 130, 20);
+        jLabel3.setBounds(10, 100, 160, 18);
         jPanel1.add(login);
-        login.setBounds(150, 100, 120, 25);
+        login.setBounds(170, 100, 140, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(50, 130, 300, 140);
+        jPanel1.setBounds(50, 140, 330, 140);
+        jPanel1.getAccessibleContext().setAccessibleName("Dados de Conexão");
+        jPanel1.getAccessibleContext().setAccessibleDescription("Dados de Conexão");
 
-        icone.setText(".");
-        getContentPane().add(icone);
-        icone.setBounds(160, 20, 100, 100);
+        getContentPane().add(JLabel_iconUserLogin);
+        JLabel_iconUserLogin.setBounds(170, 20, 90, 90);
 
-        setBounds(0, 0, 400, 396);
+        setBounds(0, 0, 432, 399);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -179,7 +189,7 @@ public class TelaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel icone;
+    private javax.swing.JLabel JLabel_iconUserLogin;
     private javax.swing.JTextField ip;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
