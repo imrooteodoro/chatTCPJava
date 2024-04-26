@@ -99,24 +99,25 @@ public class TelaCliente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setText("Porta:");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(100, 70, 70, 18);
+        jLabel1.setBounds(100, 70, 70, 19);
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel2.setText("Endereço IP:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 40, 120, 18);
+        jLabel2.setBounds(60, 40, 110, 19);
         jPanel1.add(porta);
-        porta.setBounds(170, 70, 140, 23);
+        porta.setBounds(170, 70, 140, 20);
         jPanel1.add(ip);
-        ip.setBounds(170, 40, 140, 23);
+        ip.setBounds(170, 40, 140, 20);
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel3.setText("Nome do Usuário:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 100, 160, 18);
+        jLabel3.setBounds(30, 100, 140, 19);
         jPanel1.add(login);
-        login.setBounds(170, 100, 140, 23);
+        login.setBounds(170, 100, 140, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(50, 140, 330, 140);
