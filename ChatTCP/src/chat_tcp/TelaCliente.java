@@ -25,7 +25,18 @@ public class TelaCliente extends javax.swing.JFrame {
         initComponents();
         icone.setIcon(new ImageIcon("cliente.png"));
         icone.setText("");   
-        //telaChat.setVisible(false);  
+        //telaChat.setVisible(false); 
+        
+        /*
+        initComponents();
+        //icone.setIcon(new ImageIcon("/assets/cliente/usuarioLogin.png"));
+        //icone.setText("");   
+        //telaChat.setVisible(false);
+        
+        ImageIcon icone = new ImageIcon("assets/cliente/usuarioLogin.png");
+        icone.setImage(icone.getImage().getScaledInstance(jLabel_iconLogin.getWidth(), jLabel_iconLogin.getHeight(),1)); //.setImage(icone.getImage().getScaledInstance(label_logo.getWidth(), label_logo.getHeight(),1));
+        jLabel_iconLogin.setIcon(icone);
+        */
     }
 
     /**
