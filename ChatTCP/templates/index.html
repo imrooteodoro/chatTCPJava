@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat TCP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+
+    <script type="text/JavaScript">
+        $(document).ready(function(){
+
+            var socket = io.connect("http://localhost:5000")
+            socket.on('connect', function(){
+                socket.send("User connected!");
+            });
+
+            socket.on('message', function(data){
+                $('#messages').append($('<p>').text(data));
+            });
+
+            $('#enviar_btn').on('click', function(){
+                socket.send($('#user_name').val() + ': ' + $('#message').val());
+                $('#message').val('');
+            });
+        })
+
+    </script>
+
+    <div id="messages">
+
+    </div>
+    <input type="text" id="user_name" placeholder="Nome de Usuario">
+    <input type="text" id="message" placeholder="Mensagem">
+    <button id="enviar_btn">Enviar</button>
+</body>
+</html>
