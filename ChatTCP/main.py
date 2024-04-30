@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send
+import socket
 
 app =  Flask(__name__)
 app.config['SECRET'] = "secret!123"
@@ -19,4 +20,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    socketio.run(app, host="localhost")
+    host_ip = socket.gethostbyname(socket.gethostname())
+    socketio.run(app, host=str(host_ip))
