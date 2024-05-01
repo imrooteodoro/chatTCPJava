@@ -1,14 +1,16 @@
 from tkinter import *
 from tkinter.ttk import Label, Style
 import subprocess
+import platform
 
 ############################# FUNÇÕES E VALIDAÇÃO #############################
 
 def iniciar_servidor():
     
+    so = verificar_SO()
     global server_process
     porta = int(textBox_porta.get("1.0","end"))
-    server_process = subprocess.Popen(["python", "server.py", str(porta)])
+    server_process = subprocess.Popen([str(so), "server.py", str(porta)])
     print("Servidor Iniciado")
 
 def fechar_servidor():
@@ -21,7 +23,14 @@ def fechar_servidor():
     else:
         exit()
 
-
+def verificar_SO():
+    so_atual = platform.system()
+    
+    if so_atual == "Linux":
+        return "python3"
+    elif so_atual == "Windows":
+        return "python"
+    
 ############################## INTERFACE GRÁFICA ##############################
 
 #### CRIAÇÃO DA JANELA ####
