@@ -3,6 +3,8 @@ from tkinter.ttk import Label, Style
 import subprocess
 import platform
 
+# NESTE ARQUIVO É ONDE É IMPLEMENTENTADO A INTERFACE DE GRÁFICA DE EXECUÇÃO DO SERVIDOR'
+
 ############################# FUNÇÕES E VALIDAÇÃO #############################
 
 def iniciar_servidor():

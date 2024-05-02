@@ -1,0 +1,86 @@
+body{
+    background-color: #a6d8b1;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+#logo{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formulario{
+    width: 550px;
+    background-color: #52805b;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgb(0,0,0);
+}
+
+#box_formulario{
+    display: flex; /* Usando flexbox para centralizar verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#l_endereco_ip,#l_porta,#l_nome_usuario{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 7px;
+}
+
+#endereco_ip,#porta,#nome_usuario{
+    width: 180px;
+    height: 20px;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.label_login{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+    color:#fff;
+    text-align: center;
+    align-items: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.div_login_servidor{
+    height: 40px;
+    text-align:center;
+    align-content: end;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.button_login_servidor{
+    background-color: #a5ccad;
+    width: 90px;
+    height: 35px;
+    font-size: 20px;
+    font-family:Verdana,Tahoma, sans-serif;
+    font-weight: bold;
+    bottom: 8px;
+}
+
+.containerForm{
+    display: flex; /* Alinha os elementos horizontalmente */
+    padding-top: 20px; /* Ajusta o espaçamento superior */
+    width: 100%;
+}
+
+.labelsForm, .textBoxForm{
+    text-align: right; /* Alinha o texto dos labels e inputs ao centro */
+    width: 50%;
+    height: 100px;
+    align-content: center;
+}
