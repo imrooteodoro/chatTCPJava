@@ -33,6 +33,11 @@
                 socket.send("User connected!");
             });
 
+            socket.on('user_connected', function(data){
+                socket.send('User connected: ', data.user_count);
+                $('#message').val('');
+            });
+
             socket.on('user_disconnect', function(data){
                 socket.send('User disconnected: ', data.user_count);
                 $('#message').val('');

@@ -20,14 +20,25 @@ def index():
 def handle_message(message):
     print("Messagem recebida: " + message)
     if message != "User connected!":
-        send(message, broadcast=True)
+        socketio.emit('message', message, broadcast=True)
+#        send(message, broadcast=True)
+
+@socketio.on('connect')
+def handle_connect():
+    print('um cliente se conectou')
+    # Adiciona o ID do cliente aos usuários conectados
+    usuarios_conectados.add(request.sid)
+    # Envia uma mensagem de aviso para todos os clientes que um novo usuário se conectou
+    socketio.emit('user_connected', {'user_count': len(usuarios_conectados)}, broadcast=True)
 
 @socketio.on('disconnect')
 def handle_disconnect():
     print("um cliente se desconectou")
-    usuarios_conectados.remove(request.sid)
-    socketio.emit('user_disconnect', {'user_count':len(usuarios_conectados)}, broadcast=True)
-    
+    if request.sid in usuarios_conectados:
+        print(usuarios_conectados)
+        usuarios_conectados.remove(request.sid)
+        socketio.emit('user_disconnect', {'user_count': len(usuarios_conectados)}, broadcast=True)
+
 
 if __name__ == "__main__":
     porta_server = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
