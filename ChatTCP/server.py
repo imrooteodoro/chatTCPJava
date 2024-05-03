@@ -20,4 +20,4 @@ def index():
 
 if __name__ == "__main__":
     porta_server = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    socketio.run(app, host="localhost", port= porta_server, debug=True)
+    socketio.run(app, host="localhost", port= porta_server, debug=False)
