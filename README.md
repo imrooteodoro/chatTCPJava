@@ -1,2 +1,2 @@
-# chatTCPJava
-Chat TCP Java - Sistemas Distribuidos
+# Chat TCP
+Chat TCP em Python/Flask - Sistemas Distribuidos
