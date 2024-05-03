@@ -20,8 +20,8 @@ def index():
 def handle_message(message):
     print("Messagem recebida: " + message)
     if message != "User connected!":
-        socketio.emit('message', message, broadcast=True)
-#        send(message, broadcast=True)
+       # socketio.emit('message', message, broadcast=True)
+        send(message, broadcast=True)
 
 @socketio.on('connect')
 def handle_connect():
