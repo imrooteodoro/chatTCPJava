@@ -43,4 +43,4 @@ def handle_disconnect():
 
 if __name__ == "__main__":
     porta_server = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    socketio.run(app, host="192.168.1.103", port= porta_server, debug=False)
+    socketio.run(app, host="localhost", port= porta_server, debug=False)
