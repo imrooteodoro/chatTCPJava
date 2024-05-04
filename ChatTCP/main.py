@@ -16,7 +16,7 @@ def iniciar_servidor():
     print("Servidor Iniciado")
 
 def fechar_servidor():
-    
+
     global server_process
     if server_process:
         server_process.kill()
@@ -27,12 +27,12 @@ def fechar_servidor():
 
 def verificar_SO():
     so_atual = platform.system()
-    
+
     if so_atual == "Linux":
         return "python3"
     elif so_atual == "Windows":
         return "python"
-    
+
 ############################## INTERFACE GRÁFICA ##############################
 
 #### CRIAÇÃO DA JANELA ####
@@ -53,7 +53,7 @@ label_logo.place(x=(window.winfo_width()/2 - 75),y=20,width=150, height=150)
 #### CRIAÇÃO DA LABEL E TEXTBOX PARA CADASTRO DA ''PORTA'' ####
 label_porta = Label(window, text="Porta:", font=("Arial","14","bold"), justify="center", background="#91c29b")
 label_porta.place(x=(window.winfo_width()/2 - 90), y=window.winfo_height()/2 + 30, width=60, height=25)
-
+ 
 textBox_porta = Text(window, font=("Arial","12"))
 textBox_porta.place(x=(window.winfo_width()/2 - 25), y=window.winfo_height()/2 + 30,width= 120, height=25)
 
@@ -65,4 +65,3 @@ botao_iniciar.place(x=(window.winfo_width()/2 - botao_iniciar.winfo_width()) - 1
 botao_cancelar = Button(window, text="Cancelar", font=("Velvica","16","bold"), justify="center", background="#d13f3f", foreground="#ededed", command=fechar_servidor)
 botao_cancelar.place(x=(window.winfo_width()/2 - botao_cancelar.winfo_width()) + 40, y=window.winfo_height()/2 + 130, width=140, height=30)
 window.mainloop()
-

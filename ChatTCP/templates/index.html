@@ -38,7 +38,7 @@
                 $('#message').val('');
             });
 
-            socket.on('user_disconnect', function(data){
+            socket.on('user_disconnected', function(data){
                 socket.send('User disconnected: ', data.user_count);
                 $('#message').val('');
             });
