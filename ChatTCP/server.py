@@ -8,10 +8,8 @@ app.config['SECRET'] = "secret!123"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Usuarios Conectados
-usuarios_conectados = []
+usuarios_conectados = {}
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-
 
 @app.route('/')
 def index():
@@ -26,18 +24,20 @@ def handle_message(message):
 
 @socketio.on('connect')
 def handle_connect():
-    usuarios_conectados.append(request.sid)
+    user_id = request.sid
+    usuarios_conectados[user_id] = current_time
     print("\n Conectados: "+str(usuarios_conectados)+"\n")
-    if request.sid in usuarios_conectados:
-        send(f'{current_time} 1234 conectou', broadcast=True)
+    if user_id in usuarios_conectados:
+        send(f'{current_time} {user_id} conectou', broadcast=True)
         print('um cliente se conectou')
 
 @socketio.on('disconnect')
 def handle_disconnect():
-    usuarios_conectados.remove(request.sid)
-    print("\n Conectados: "+str(usuarios_conectados)+"\n")
-    if not request.sid in usuarios_conectados:
-        send(f'{current_time} 1234 desconectou', broadcast=True)
+    user_id = request.sid
+    if user_id in usuarios_conectados:
+        del usuarios_conectados[user_id]
+        print("\n Conectados: "+str(usuarios_conectados)+"\n")
+        send(f'{current_time} {user_id} desconectou', broadcast=True)
         print("um cliente se desconectou")
 
 if __name__ == "__main__":
