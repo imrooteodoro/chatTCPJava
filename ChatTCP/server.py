@@ -11,8 +11,12 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 usuarios_conectados = {}
 
 @app.route('/')
-def index():
+def login():
     return render_template("login.html")
+
+@app.route('/chat')
+def index():
+    return render_template ('index.html')
 
 @socketio.on('message')
 def handle_message(message):
