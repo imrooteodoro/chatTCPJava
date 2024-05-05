@@ -5,41 +5,137 @@
     <title>Chat TCP</title>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url(templates/fundo/fundo2.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #messages {
+            min-height: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .input-group input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .input-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+
+        #hora-local {
+            font-size: 18px;
+            text-align: center;
+            margin-top: -10px; 
+            margin-bottom: 20px; 
+        }
+    </style>
 </head>
-
-<style>
-    body{
-        text-align: center;
-        font-family: Arial, serif;
-        font-size: 14pt;
-    }
-
-    #messages{
-        margin: 0 auto;
-        width: 60%;
-        text-align: left;
-        min-height: 300px;
-    }
-</style>
-
 <body>
+    <div class="container">
+        <h1>Sejam bem-vindos!</h1>
 
-    <script type="text/JavaScript">
+        <p id="hora-local"></p>
+
+        <div id="messages">
+            
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="user_name" placeholder="Nome de Usuário">
+            <input type="text" id="message" placeholder="Mensagem">
+            <button id="enviar_btn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function atualizarHorario() {
+            var data = new Date();
+            var horas = data.getHours();
+            var minutos = data.getMinutes();
+            var segundos = data.getSeconds();
+
+            horas = (horas < 10) ? "0" + horas : horas;
+            minutos = (minutos < 10) ? "0" + minutos : minutos;
+            segundos = (segundos < 10) ? "0" + segundos : segundos;
+
+            document.getElementById("hora-local").textContent = horas + ":" + minutos + ":" + segundos;
+        }
+
+        setInterval(atualizarHorario, 1000);
+
+        window.onload = atualizarHorario;
+    </script>
+
+    <script type="text/javascript">
         $(document).ready(function(){
-
-            var socket = io("http://localhost:1452")
+            var socket = io("http://localhost:1452");
 
             socket.on('connect', function(){
                 socket.send("User connected!");
             });
 
             socket.on('user_connected', function(data){
-                socket.send('User connected: ', data.user_count);
+                socket.send('User connected: ' + data.user_count);
                 $('#message').val('');
             });
 
             socket.on('user_disconnected', function(data){
-                socket.send('User disconnected: ', data.user_count);
+                socket.send('User disconnected: ' + data.user_count);
                 $('#message').val('');
             });
 
@@ -51,15 +147,7 @@
                 socket.send($('#user_name').val() + ': ' + $('#message').val());
                 $('#message').val('');
             });
-        })
-
+        });
     </script>
-
-    <div id="messages">
-
-    </div>
-    <input type="text" id="user_name" placeholder="Nome de Usuario">
-    <input type="text" id="message" placeholder="Mensagem">
-    <button id="enviar_btn">Enviar</button>
 </body>
 </html>
