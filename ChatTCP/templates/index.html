@@ -14,7 +14,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-image: url(templates/fundo/fundo2.jpg);
+            background-image: url(static/assets_web/fundo2.jpg);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -122,12 +122,13 @@
     </script>
 
     <script type="text/javascript">
+        export {url_link} from './t'
         $(document).ready(function(){
-            var socket = io("http://localhost:1452");
+            //var socket = io("http://localhost:1452");
 
-            socket.on('connect', function(){
-                socket.send("User connected!");
-            });
+            //socket.on('connect', function(){
+            //    socket.send("User connected!");
+            //});
 
             socket.on('user_connected', function(data){
                 socket.send('User connected: ' + data.user_count);

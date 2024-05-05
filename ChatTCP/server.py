@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, send
 from datetime import datetime
-import sys
+import sys, socket
+import subprocess
 
 app = Flask(__name__)
 app.config['SECRET'] = "secret!123"
@@ -9,6 +10,13 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Usuarios Conectados
 usuarios_conectados = {}
+
+def pegar_ip():
+    out = subprocess.Popen(['hostname', '-I'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    stdout,_ = out.communicate()
+    stdout = stdout.decode().strip()
+    return stdout
+
 
 @app.route('/')
 def login():
@@ -48,4 +56,4 @@ def handle_disconnect():
 
 if __name__ == "__main__":
     porta_server = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    socketio.run(app, host="localhost", port=porta_server, debug=False)
+    socketio.run(app, host=pegar_ip(), port=porta_server, debug=True)
