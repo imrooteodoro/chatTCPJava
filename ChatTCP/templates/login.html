@@ -22,9 +22,9 @@
             </div>
             <div class="containerForm">
                 <div class="labelsForm">
-                    <label for="endereco_ip" id="l_endereco_ip">Endereço IP: </label>
-                    <label for="porta" id="l_porta">Porta: </label>
-                    <label for="nome_usuario" id="l_nome_usuario">Nome do Usuario: </label>
+                    <label for="endereco_ip" id="l_endereco_ip">Endereço IP: </label>
+                    <label for="porta" id="l_porta">Porta: </label>
+                    <label for="nome_usuario" id="l_nome_usuario">Nome do Usuario: </label>
                 </div>
 
                 <div class="textBoxForm">
@@ -34,10 +34,39 @@
                 </div>
             </div>
             <div class="div_login_servidor">
-                <button class="button_login_servidor">Entrar</button>
+                <button class="button_login_servidor" onclick="login()">Entrar</button>
             </div>
         </div>
     </div>
 
+    <script>
+        async function login() {
+            const enderecoIp = document.getElementById('endereco_ip').value;
+            const porta = document.getElementById('porta').value;
+            const nomeUsuario = document.getElementById('nome_usuario').value;
+        
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        endereco_ip: enderecoIp,
+                        porta: porta,
+                        nome_usuario: nomeUsuario
+                    })
+                });
+        
+                if (response.ok) {
+                    window.location.href = '/chat'; // Redireciona para a página de chat após o login bem-sucedido
+                } else {
+                    alert('Usuário ou senha inválidos');
+                }
+            } catch (error) {
+                console.error('Erro ao fazer login:', error);
+            }
+        }
+    </script>
 </body>
 </html>
