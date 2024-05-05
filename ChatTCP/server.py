@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, send
 from datetime import datetime
-import sys
+import sys, subprocess
 
 app = Flask(__name__)
 app.config['SECRET'] = "secret!123"
@@ -9,6 +9,15 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Usuarios Conectados
 usuarios_conectados = {}
+
+def pegar_ip():
+   #O argumento stdout=subprocess.PIPE que informa Popen deve abrir um Pipe para STDOUT.
+#O argumento stderr=subprocess.STDOUT que informa Popen redirecionar STDERR para STDOUT.
+    out = subprocess.Popen(['hostname', '-I'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    stdout,_ = out.communicate()
+    stdout = stdout.decode().strip()
+    print(stdout)
+    return stdout
 
 @app.route('/')
 def login():
@@ -33,7 +42,7 @@ def handle_connect():
     usuarios_conectados[user_id] = current_time
     print("\n Conectados: "+str(usuarios_conectados)+"\n")
     if user_id in usuarios_conectados:
-        send(f'{current_time} {user_id} conectou', broadcast=True)
+        send(f'{current_time} - {user_id} conectou', broadcast=True)
         print('um cliente se conectou')
 
 @socketio.on('disconnect')
@@ -48,4 +57,4 @@ def handle_disconnect():
 
 if __name__ == "__main__":
     porta_server = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    socketio.run(app, host="localhost", port=porta_server, debug=False)
+    socketio.run(app, host=pegar_ip(), port=porta_server, debug=False)
