@@ -20,12 +20,15 @@ def handle_message(message):
     print("Messagem recebida: " + message)
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     if message != "User connected!":
+
         message_with_time = f'{current_time} - {message}'
+
+        message_with_time = f"{current_time} - {message}"
+
         send(message_with_time, broadcast=True)
 
 @socketio.on('connect')
 def handle_connect():
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     user_id = request.sid
     usuarios_conectados[user_id] = current_time
     print("\n Conectados: "+str(usuarios_conectados)+"\n")
@@ -36,6 +39,8 @@ def handle_connect():
 @socketio.on('disconnect')
 def handle_disconnect():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
     user_id = request.sid
     if user_id in usuarios_conectados:
         del usuarios_conectados[user_id]
