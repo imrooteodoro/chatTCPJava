@@ -27,7 +27,7 @@
     <script type="text/JavaScript">
             $(document).ready(function(){
 
-                //var socket = io("http://localhost:1452")
+                var socket = io("http://localhost:1452")
 
                 socket.on('connect', function(){
                     socket.send("User connected!");
