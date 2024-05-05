@@ -19,7 +19,7 @@ $(document).ready(function(){
         socket.on('connect', function(){
             socket.send("User connected!");
             console.log("User connected!");
-            window.location.href = "static/chat/index.html";
+            window.location.href = "/chat";
 
         });
     });
