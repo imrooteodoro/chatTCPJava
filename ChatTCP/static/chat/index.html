@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat TCP</title>
+    
+</head>
+
+<style>
+    body{
+        text-align: center;
+        font-family: Arial, serif;
+        font-size: 14pt;
+    }
+
+    #messages{
+        margin: 0 auto;
+        width: 60%;
+        text-align: left;
+        min-height: 300px;
+    }
+</style>
+
+<body>
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/JavaScript">
+            $(document).ready(function(){
+
+                //var socket = io("http://localhost:1452")
+
+                socket.on('connect', function(){
+                    socket.send("User connected!");
+                });
+
+                socket.on('user_connected', function(data){
+                    socket.send('User connected: ', data.user_count);
+                    $('#message').val('');
+                });
+
+                socket.on('user_disconnected', function(data){
+                    socket.send('User disconnected: ', data.user_count);
+                    $('#message').val('');
+                });
+
+                socket.on('message', function(data){
+                    $('#messages').append($('<p>').text(data));
+                });
+
+                $('#enviar_btn').on('click', function(){
+                    socket.send($('#user_name').val() + ': ' + $('#message').val());
+                    $('#message').val('');
+                });
+            })
+
+    </script>
+
+    <div id="messages">
+
+    </div>
+    <input type="text" id="user_name" placeholder="Nome de Usuario">
+    <input type="text" id="message" placeholder="Mensagem">
+    <button type="submit" id="enviar_mensagem_btn">Enviar</button>
+
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
