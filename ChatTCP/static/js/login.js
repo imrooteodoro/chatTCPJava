@@ -24,3 +24,13 @@ $(document).ready(function(){
         });
     });
 });
+
+dados_login = {
+    n_ip: ip,
+    n_porta: porta,
+    nome: nome_usuario
+}
+export function DadosLogin(){
+
+    return dados_login
+}
