@@ -8,36 +8,41 @@
 </head>
 
 <body>
+
     <br><br><br><br>
 
     <div id="logo">
         <img src="{{ url_for('static', filename='assets_web/usuario_login.png') }}" alt="" width="300px">
     </div>
     <br><br><br><br>
-
-    <div id="box_formulario">
-        <div class="formulario">
-            <div class="label_login">
-                <label for=""> LOGIN </label>
-            </div>
-            <div class="containerForm">
-                <div class="labelsForm">
-                    <label for="endereco_ip" id="l_endereco_ip">Endereço IP: </label>
-                    <label for="porta" id="l_porta">Porta: </label>
-                    <label for="nome_usuario" id="l_nome_usuario">Nome do Usuario: </label>
+    <form id="form_login_cliente">
+        <div id="box_formulario">
+            <div class="formulario">
+                <div class="label_login">
+                    <label for=""> LOGIN </label>
                 </div>
-
-                <div class="textBoxForm">
-                    <input type="text" id="endereco_ip">
-                    <input type="text" id="porta">
-                    <input type="text" id="nome_usuario">
+                <div class="containerForm">
+                    <div class="labelsForm">
+                        <label for="endereco_ip" id="l_endereco_ip">Endereço IP: </label>
+                        <label for="porta" id="l_porta">Porta: </label>
+                        <label for="nome_usuario" id="l_nome_usuario">Nome do Usuario: </label>
+                    </div>
+    
+                    <div class="textBoxForm">
+                        <input type="text" id="endereco_ip">
+                        <input type="text" id="porta">
+                        <input type="text" id="nome_usuario">
+                    </div>
                 </div>
-            </div>
-            <div class="div_login_servidor">
-                <button class="button_login_servidor">Entrar</button>
+                <div class="div_login_servidor">
+                    <button type="submit" class="button_login_servidor">Entrar</button>
+                </div>
             </div>
         </div>
-    </div>
-
+    </form>
+    
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>
