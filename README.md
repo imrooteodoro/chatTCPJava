@@ -13,5 +13,5 @@ Apesar de não ter mitas funcionalizades, o principal objetivo é que os usuári
 
 <b>TECNOLIGIAS UTILIZADAS</b>
 
-<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/vsc.jpg" alt="" width="100px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/css.png" alt="" width="80px">
-<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/html.png" alt="" width="120px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/javascript.png" alt="" width="150px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/python%20e%20flask.jpg" alt="" width="250px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/vsc.jpg" alt="" width="100px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/css.png" alt="" width="90px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/html.png" alt="" width="110px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/javascript.png" alt="" width="130px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/python%20e%20flask.jpg" alt="" width="300px">
