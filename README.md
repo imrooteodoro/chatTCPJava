@@ -9,10 +9,10 @@ linguagens que se adequam bem no ambiente Web (pois era nosso intituito desenvol
 
 Utilizamos também HTML e CSS para desenvolver a estilização do nosso Chat (front-end). É um Chat simples e intuitivo. 
 
-Apesar de não ter mitas funcionalizades, o principal objetivo é que os usuário pudessem se comunicar pela rede local, seja pelo Desktop ou Celular.
+Apesar de não ter mitas funcionalizades, o principal objetivo é que os usuário pudessem se comunicar pela rede local sendo pelo Desktop ou Celular, onde as conexões serã gerenciadas por um servidor.
 
 # <b>TECNOLOGIAS UTILIZADAS</b>
 
 <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/vsc.jpg" alt="" width="140px">  <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/css.png" alt="" width="90px">  <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/html.png" alt="" width="125px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/javascript.png" alt="" width="120px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/python%20e%20flask.jpg" alt="" width="300px">
 <br><br><br><br>
-<b>OBS: Para a execução do servidor, deverá ser executado o arquivo main.py, pois é o arquivo que contem interface gráfica</b>
+<b>OBS: Para a execução do servidor, deverá ser executado o arquivo main.py (Arquivo com interface gráfica)</b>
