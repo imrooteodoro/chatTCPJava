@@ -14,5 +14,5 @@ Apesar de não ter mitas funcionalizades, o principal objetivo é que os usuári
 # <b>TECNOLOGIAS UTILIZADAS</b>
 
 <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/vsc.jpg" alt="" width="140px">  <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/css.png" alt="" width="90px">  <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/html.png" alt="" width="125px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/javascript.png" alt="" width="120px"> <img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/python%20e%20flask.jpg" alt="" width="300px">
-<br>
+<br><br><br><br>
 <b>OBS: Para a execução do servidor, deverá ser executado o arquivo main.py, pois é o arquivo que contem interface gráfica</b>
