@@ -13,8 +13,8 @@ Apesar de não ter mitas funcionalizades, o principal objetivo é que os usuári
 
 <b>TECNOLIGIAS UTILIZADAS</b>
 
-<img src="" alt="" width="">
-<img src="" alt="" width="">
-<img src="" alt="" width="">
-<img src="" alt="" width="">
-<img src="" alt="" width="">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/vsc.jpg" alt="" width="100px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/css.png" alt="" width="100px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/html.png" alt="" width="100px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/javascript.png" alt="" width="100px">
+<img src="https://raw.githubusercontent.com/imrooteodoro/chatTCPJava/main/DONT'%20OPEN/python%20e%20flask.jpg" alt="" width="100px">
