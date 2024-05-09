@@ -17,3 +17,12 @@ Apesar de não ter muitas funcionalizades, o principal objetivo do projeto é qu
 <br><br><br><br>
 <b>OBS: Para a execução do servidor, deverá ser executado o arquivo main.py (Arquivo com interface gráfica)</b>
 <b>     A execução do Cliente será feita pelo navegador, onde a URL será o IP e Porta fornecido pelo servidor, após a sua execução</b>
+
+# INSTALAÇÃO DE PACOTES (DEPENDÊNCIAS)
+Windows / Linux (derivados do Debian)
+
+Pacote flask: <code><b>pip install flask</b></code><br>
+Pacote flask-socket: <code><b>pip install flask-socketio</b></code>
+
+<strong>OBS: Em algumas distribuições Linux (derivados do debain), podem ocorrer erros na execução da interface gráfica por conta da falta da biblioteca tkinter.
+    <p>Para solucionar este problema, utilize o seguinte comando (este comando irá fará o download e a instalação da biblioteca tkinter): <code>sudo apt install python3-tk</code></p></strong>
